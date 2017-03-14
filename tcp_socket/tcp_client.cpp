@@ -9,12 +9,10 @@
 
 int main(int argc,char *argv[])
 {
-
     if(argc<3)
     {
         printf("usage:%s ip port \n",argv[0]);
-        exit(1);
-           
+        exit(1);          
     }
    
     /*步骤1：创建socket*/
@@ -24,7 +22,6 @@ int main(int argc,char *argv[])
         perror("socket error");
         exit(1);
     }    
-
 
     struct sockaddr_in serveraddr;
     memset(&serveraddr,0,sizeof(serveraddr));
@@ -43,7 +40,6 @@ int main(int argc,char *argv[])
     {
         perror("connect error");
         exit(1);
-        
     }
 
     /*步骤3：调用IO函数(read/write)和服务器端双向通信*/
@@ -61,6 +57,4 @@ int main(int argc,char *argv[])
     {
         perror("write error");
     }
-
-
 }
